@@ -17,14 +17,14 @@ delete(){
 }
 
 appendNumber(number){
-    if(number === '.' && this.currOp.includes('.')) return;
+    if(number === '.' && this.currOp.includes('.')) return
  this.currOp = this.currOp.toString() + number.toString();
  
 }
 
 chooseOp(operation){
-    if(this.currOp === '' ) return;
-    if(this.prevOp !== ''){
+    if(this.currOp === '' ) return
+    if(this.prevOp !== '' && this.currOp !== ''){
         this.calculate();
     }
 this.operation = operation;
@@ -57,12 +57,11 @@ calculate(){
         default:
             return;
     }
+    this.reset = true;
 this.currOp = computation;
 this.operation = undefined;
 this.prevOp = '';
-this.reset = true;
-if(prev === 0.1 && curr === 0.2 || curr ===0.1 && prev===0.2 ) 
-return this.currOp = 0.3;
+
 
 
 
